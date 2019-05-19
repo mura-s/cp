@@ -54,6 +54,8 @@ int V, E;
 
 // 最小全域木 (全域木のうち、その辺群の重みの総和が最小になる木)
 // を求めるアルゴリズム
+//
+// 計算量: O(ElogV)
 int kruskal() {
   sort(es, es + E, comp);
   uf_tree uf(V);
