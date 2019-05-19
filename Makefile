@@ -3,16 +3,8 @@
 DIR :=
 
 # tasks
-.PHONY: abc
-abc: .check-dir
-	mkdir -p $(DIR)
-	cp -r template $(DIR)/a
-	cp -r template $(DIR)/b
-	cp -r template $(DIR)/c
-	cp -r template $(DIR)/d
-
-.PHONY: agc
-agc: .check-dir
+.PHONY: contest
+contest: .check-dir
 	mkdir -p $(DIR)
 	cp -r template $(DIR)/a
 	cp -r template $(DIR)/b
