@@ -11,8 +11,9 @@
 #include <vector>
 using namespace std;
 typedef long long ll;
-// const ll MOD = 1000000007;
-// const int INF = 2000000000;
+const int INF = (1 << 30) - 1;
+const ll LL_INF = (1LL << 62) - 1;
+const ll MOD = 1e9 + 7;
 
 int N;
 
