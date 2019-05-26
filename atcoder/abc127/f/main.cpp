@@ -60,8 +60,7 @@ int main() {
       // print
       ll x = que_l.top();
       cout << x << " ";
-      cout << b_sum + (x * (ll)que_l.size() - l_sum) +
-                  (r_sum - x * (ll)que_r.size());
+      cout << b_sum + (x * (ll)que_l.size() - l_sum) + (r_sum - x * (ll)que_r.size());
       cout << endl;
     }
   }
