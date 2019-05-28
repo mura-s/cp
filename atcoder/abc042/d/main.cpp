@@ -1,26 +1,22 @@
 #include <algorithm>
-#include <cassert>
 #include <climits>
 #include <cmath>
-#include <functional>
 #include <iomanip>
 #include <iostream>
 #include <map>
 #include <queue>
 #include <set>
+#include <stack>
 #include <string>
 #include <vector>
 using namespace std;
 typedef long long ll;
-
-// ref. http://drken1215.hatenablog.com/entry/2018/06/08/210000
+// const int INF = (1 << 30) - 1;
+// const ll LL_INF = (1LL << 62) - 1;
+// const ll MOD = 1e9 + 7;
 
 const ll MOD = 1000000007;
 const int MAX = 200001;
-
-// fac[n]: n!
-// finv[n]: (n!)^-1
-// inv[n]: nの逆元
 ll fac[MAX], finv[MAX], inv[MAX];
 
 // テーブルを作る前処理
@@ -35,8 +31,7 @@ void comb_init() {
   }
 }
 
-// 二項係数計算 (combination)
-// nCk = (n!) * (k!)^-1 * ((n-k)!)^-1 として計算
+// 二項係数計算 (combination. nCkを求める.)
 ll comb(int n, int k) {
   if (n < k) {
     return 0;
@@ -47,11 +42,25 @@ ll comb(int n, int k) {
   return fac[n] * (finv[k] * finv[n - k] % MOD) % MOD;
 }
 
+ll H, W, A, B;
+
 int main() {
-  cin.tie(0);
   ios::sync_with_stdio(false);
+  cin.tie(0);
   comb_init();
 
-  cout << comb(10, 3) << endl;
+  cin >> H >> W >> A >> B;
+
+  ll ans = 0;
+  for (ll h = 0; h < H - A; h++) {
+    ll w1 = B - 1;
+    ll w2 = B;
+    ll w_end = W - 1;
+    ll h_end = H - 1;
+    ans += comb(w1 + h, w1) * comb(h_end - h + w_end - w2, w_end - w2);
+    ans %= MOD;
+  }
+
+  cout << ans << endl;
   return 0;
 }
