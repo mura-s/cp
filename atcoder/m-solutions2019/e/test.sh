@@ -26,36 +26,18 @@ try() {
 # test cases
 echo "[Sample1]"
 input1="$(cat << EOS
-
+2
+7 2 4
+12345 67890 2019
 EOS
 )"
 expected1="$(cat << EOS
+9009
+916936
 
 EOS
 )"
 try "$input1" "$expected1"
-
-echo "[Sample2]"
-input2="$(cat << EOS
-
-EOS
-)"
-expected2="$(cat << EOS
-
-EOS
-)"
-try "$input2" "$expected2"
-
-echo "[Sample3]"
-input3="$(cat << EOS
-
-EOS
-)"
-expected3="$(cat << EOS
-
-EOS
-)"
-try "$input3" "$expected3"
 
 echo "[Result]"
 if ! $all_ac; then
