@@ -20,7 +20,7 @@ ll nCr(ll n, ll r) {
   if (r > n) {
     return 0;
   }
-  if (r == 0) {
+  if (r == 0 || n == r) {
     return 1;
   }
   if (r * 2 > n) {
@@ -42,7 +42,11 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
+  cout << nCr(10, 0) << endl;
+  cout << nCr(10, 1) << endl;
   cout << nCr(10, 3) << endl;
+  cout << nCr(10, 9) << endl;
+  cout << nCr(10, 10) << endl;
   cout << nHr(7, 3) << endl;
   return 0;
 }
