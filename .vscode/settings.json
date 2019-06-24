@@ -8,6 +8,7 @@
     "vector": "cpp",
     "unordered_map": "cpp",
     "ios": "cpp",
-    "utility": "cpp"
+    "utility": "cpp",
+    "queue": "cpp"
   }
 }
