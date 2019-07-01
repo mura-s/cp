@@ -36,6 +36,9 @@ ll nCr(ll n, ll r) {
 }
 
 // 重複組み合わせを求める
+// r個のものをn種類にわける
+//
+// ref. https://mathtrain.jp/tyohukuc
 ll nHr(ll n, ll r) { return nCr(n + r - 1, r); }
 
 int main() {
