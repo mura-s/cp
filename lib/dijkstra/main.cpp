@@ -13,7 +13,7 @@
 using namespace std;
 typedef long long ll;
 
-const int INF = 2000000000;
+const int INF = (1 << 30) - 1;
 const int MAX_V = 100001;
 
 struct edge {
