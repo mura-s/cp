@@ -63,8 +63,8 @@ void update(int k, int a) {
 // [a, b) の最小値を求める
 // 後ろのほうの引数は、計算の簡単のための引数。
 // kは節点の番号、l, rはその節点が [l, r) に対応づいていることを表す。
-// したがって、外からは query(a, b, 0, 0, n) として呼ぶ。
-int query(int a, int b, int k, int l, int r) {
+// したがって、外からは inner_query(a, b, 0, 0, n) として呼ぶ。
+int inner_query(int a, int b, int k, int l, int r) {
   // [a, b) と [l, r) が交差しなければ INF
   if (r <= a || b <= l) {
     return INF;
@@ -75,11 +75,14 @@ int query(int a, int b, int k, int l, int r) {
     return dat[k];
   } else {
     // そうでなければ、2つの子の最小値
-    int vl = query(a, b, k * 2 + 1, l, (l + r) / 2);
-    int vr = query(a, b, k * 2 + 2, (l + r) / 2, r);
+    int vl = inner_query(a, b, k * 2 + 1, l, (l + r) / 2);
+    int vr = inner_query(a, b, k * 2 + 2, (l + r) / 2, r);
     return min(vl, vr);
   }
 }
+
+// [a, b) の最小値を求める
+int query(int a, int b) { return inner_query(a, b, 0, 0, n); }
 
 int n_, q;
 
@@ -97,7 +100,7 @@ int main() {
     if (com == 0) {
       update(x, y);
     } else {
-      cout << query(x, y + 1, 0, 0, n) << endl;
+      cout << query(x, y + 1) << endl;
     }
   }
   return 0;
