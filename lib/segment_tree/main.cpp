@@ -20,6 +20,13 @@ const int INF = 2147483647;
 
 // セグメント木による RMQ (Range Minimum Query) の実装
 // RMQ以外にする場合は、minの部分を全て他の関数に置換する
+//
+// 計算量
+// - 初期化: O(nlogn)
+//   - O(n)でも実装できるが、O(nlogn)の実装になっている
+//   - init後にupdateで初期化
+// - update: O(logn)
+// - query: O(logn)
 
 const int MAX_N = 1 << 17;
 
