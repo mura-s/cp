@@ -23,11 +23,13 @@ int N, Q;
 map<int, long> mp;
 
 long point[MAX_V];
+bool visit[MAX_V];
 
 void dfs(int v, long cur_point) {
-  if (point[v] != 0) {
+  if (visit[v]) {
     return;
   }
+  visit[v] = true;
   long tmp = mp[v];
   point[v] = cur_point + tmp;
 
@@ -46,6 +48,7 @@ int main() {
     a--;
     b--;
     g[a].push_back(b);
+    g[b].push_back(a);
   }
   for (int i = 0; i < Q; i++) {
     int p;
