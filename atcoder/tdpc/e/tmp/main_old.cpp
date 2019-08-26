@@ -28,26 +28,27 @@ int main() {
   cin >> D >> N;
   ll len = N.size();
   dp[0][0][0] = 1;
-  for (int i = 0; i < len; i++) {
-    for (int j = 0; j < D; j++) {
-      for (int k = 0; k <= 1; k++) {
-        if (dp[i][j][k] == 0) {
+  for (ll pos = 0; pos < len; pos++) {
+    for (ll sum = 0; sum < D; sum++) {
+      for (ll sml = 0; sml <= 1; sml++) {
+        if (dp[pos][sum][sml] == 0) {
           continue;
         }
 
-        if (k == 1) {
-          for (int d = 0; d < 10; d++) {
-            dp[i + 1][(j + d) % D][1] += dp[i][j][1];
-            dp[i + 1][(j + d) % D][1] %= MOD;
+        if (sml == 1) {
+          ll lim = 10;
+          for (int d = 0; d < lim; d++) {
+            dp[pos + 1][(sum + d) % D][1] += dp[pos][sum][1];
+            dp[pos + 1][(sum + d) % D][1] %= MOD;
           }
         } else {
-          int lim = N[i] - '0';
+          ll lim = N[pos] - '0';
           for (int d = 0; d < lim; d++) {
-            dp[i + 1][(j + d) % D][1] += dp[i][j][0];
-            dp[i + 1][(j + d) % D][1] %= MOD;
+            dp[pos + 1][(sum + d) % D][1] += dp[pos][sum][0];
+            dp[pos + 1][(sum + d) % D][1] %= MOD;
           }
-          dp[i + 1][(j + lim) % D][0] += dp[i][j][0];
-          dp[i + 1][(j + lim) % D][0] %= MOD;
+          dp[pos + 1][(sum + lim) % D][0] += dp[pos][sum][0];
+          dp[pos + 1][(sum + lim) % D][0] %= MOD;
         }
       }
     }
