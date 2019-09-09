@@ -25,7 +25,8 @@ int main() {
   cin.tie(0);
   cin >> N >> K;
   cin >> S;
-  for (int i = 0; i < N;) {
+  int i = 0;
+  while (i < N) {
     char c = S[i];
     int cnt = 1;
     i++;
