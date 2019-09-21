@@ -11,17 +11,18 @@
 #include <string>
 #include <vector>
 using namespace std;
+typedef long long ll;
 
 // 素因数分解
 // 素数の値と個数のpairのvectorを返す
-vector<pair<long, long>> prime_factor(long n) {
-  vector<pair<long, long>> v;
+vector<pair<ll, ll>> prime_factor(ll n) {
+  vector<pair<ll, ll>> v;
 
-  for (long p = 2; p * p <= n; ++p) {
+  for (ll p = 2; p * p <= n; ++p) {
     if (n % p != 0) {
       continue;
     }
-    long num = 0;
+    ll num = 0;
     while (n % p == 0) {
       ++num;
       n /= p;
@@ -40,8 +41,8 @@ int main() {
   cin.tie(0);
   ios::sync_with_stdio(false);
 
-  long M = 48;
-  vector<pair<long, long>> primes = prime_factor(M);
+  ll M = 48;
+  vector<pair<ll, ll>> primes = prime_factor(M);
 
   for (auto &e : primes) {
     cout << e.first << " " << e.second << endl;
