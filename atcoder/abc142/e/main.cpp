@@ -44,7 +44,6 @@ int main() {
   for (int i = 0; i < M; i++) {
     for (int j = 0; j < (1 << N); j++) {
       ll next = j | c[i];
-      dp[next] = min(dp[next], dp[next]);
       dp[next] = min(dp[next], dp[j] + a[i]);
     }
   }
