@@ -39,7 +39,7 @@ func main() {
 		// right ans
 		cmd1 := exec.Command(rightCmd)
 		stdin1, _ := cmd1.StdinPipe()
-		io.WriteString(stdin1, input)
+		_, _ = io.WriteString(stdin1, input)
 		stdin1.Close()
 		ansByte1, _ := cmd1.Output()
 		ans1 := string(ansByte1)
@@ -47,7 +47,7 @@ func main() {
 		// wrong ans
 		cmd2 := exec.Command(wrongCmd)
 		stdin2, _ := cmd2.StdinPipe()
-		io.WriteString(stdin2, input)
+		_, _ = io.WriteString(stdin2, input)
 		stdin2.Close()
 		ansByte2, _ := cmd2.Output()
 		ans2 := string(ansByte2)
