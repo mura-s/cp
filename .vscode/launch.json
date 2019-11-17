@@ -6,15 +6,12 @@
   "configurations": [
     {
       "name": "dbg",
-      "type": "cppdbg",
+      "type": "lldb",
       "request": "launch",
       "program": "${fileDirname}/${fileBasenameNoExtension}",
       "args": [],
-      "stopAtEntry": false,
       "cwd": "${workspaceFolder}",
-      "environment": [],
-      "externalConsole": true,
-      "MIMode": "lldb",
+      "stdio": null,
       "preLaunchTask": "g++ build active file"
     }
   ]
