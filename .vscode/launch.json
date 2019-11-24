@@ -12,6 +12,7 @@
       "args": [],
       "cwd": "${workspaceFolder}",
       "stdio": null,
+      "expressions": "native",
       "preLaunchTask": "g++ build active file"
     }
   ]
