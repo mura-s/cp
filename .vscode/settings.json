@@ -25,6 +25,7 @@
     "string_view": "cpp",
     "tuple": "cpp",
     "__config": "cpp",
-    "deque": "cpp"
+    "deque": "cpp",
+    "string": "cpp"
   }
 }
