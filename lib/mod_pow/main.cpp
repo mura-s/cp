@@ -15,7 +15,7 @@ typedef long long ll;
 const ll MOD = 1000000007;
 
 // 繰り返し二乗法 (O(logn))
-ll power(ll x, ll n) {
+ll mod_pow(ll x, ll n) {
   ll res = 1;
   while (n > 0) {
     if (n & 1) {
@@ -35,6 +35,6 @@ int main() {
   cin.tie(0);
   cin >> m >> n;
 
-  cout << power(m, n) << endl;
+  cout << mod_pow(m, n) << endl;
   return 0;
 }
