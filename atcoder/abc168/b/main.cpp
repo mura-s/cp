@@ -16,15 +16,15 @@ typedef long long ll;
 // const int INF = (1 << 30) - 1;
 // const ll LL_INF = (1LL << 62) - 1;
 // const ll MOD = 1e9 + 7;
-// const double PI = M_PI;
 
-int N;
+int K;
+string S;
 // vector<int> A;
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
-  cin >> N;
+  cin >> K >> S;
   // A.resize(N);
   // for (int i = 0; i < N; i++) {
   //   int tmp;
@@ -32,8 +32,14 @@ int main() {
   //   A[i] = tmp;
   // }
 
-  int ans = 0;
-
-  cout << ans << endl;
+  for (int i = 0; i < S.size(); i++) {
+    if (i < K) {
+      cout << S[i];
+    } else {
+      cout << "...";
+      break;
+    }
+  }
+  cout << endl;
   return 0;
 }

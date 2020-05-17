@@ -16,24 +16,21 @@ typedef long long ll;
 // const int INF = (1 << 30) - 1;
 // const ll LL_INF = (1LL << 62) - 1;
 // const ll MOD = 1e9 + 7;
-// const double PI = M_PI;
+const double PI = M_PI;
 
-int N;
+double A, B, H, M;
 // vector<int> A;
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
-  cin >> N;
-  // A.resize(N);
-  // for (int i = 0; i < N; i++) {
-  //   int tmp;
-  //   cin >> tmp;
-  //   A[i] = tmp;
-  // }
+  cin >> A >> B >> H >> M;
 
-  int ans = 0;
+  double m = M / 60.0 * 2 * PI;
+  double h = H / 12.0 * 2 * PI + M / 60.0 * 2 * PI / 12;
+  double rad = m - h >= 0 ? m - h : h - m;
 
-  cout << ans << endl;
+  double ans = sqrt(A * A + B * B - 2 * A * B * cos(rad));
+  cout << fixed << setprecision(20) << ans << endl;
   return 0;
 }

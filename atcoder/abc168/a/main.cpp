@@ -16,7 +16,6 @@ typedef long long ll;
 // const int INF = (1 << 30) - 1;
 // const ll LL_INF = (1LL << 62) - 1;
 // const ll MOD = 1e9 + 7;
-// const double PI = M_PI;
 
 int N;
 // vector<int> A;
@@ -32,8 +31,14 @@ int main() {
   //   A[i] = tmp;
   // }
 
-  int ans = 0;
+  int ans = N % 10;
+  if (ans == 2 || ans == 4 || ans == 5 || ans == 7 || ans == 9) {
+    cout << "hon" << endl;
+  } else if (ans == 0 || ans == 1 || ans == 6 || ans == 8) {
+    cout << "pon" << endl;
+  } else if (ans == 3) {
+    cout << "bon" << endl;
+  }
 
-  cout << ans << endl;
   return 0;
 }
