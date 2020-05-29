@@ -12,19 +12,23 @@ public class Main {
         // long L_INF = (1L << 62) - 1;
         // long MOD = (long) 1e9 + 7;
 
-        int N;
+        int S, W;
         // int[] A;
 
         // write your code
         public void solve(InputReader in, PrintWriter out) {
-            N = in.nextInt();
+            S = in.nextInt();
+            W = in.nextInt();
             // A = new int[N];
             // for (int i = 0; i < N; i++) {
             // A[i] = in.nextInt();
             // }
 
-            int ans = 0;
-            out.println(ans);
+            if (S <= W) {
+                out.println("unsafe");
+            } else {
+                out.println("safe");
+            }
         }
 
         void debug(Object... os) {
