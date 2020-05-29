@@ -1,4 +1,4 @@
-package java.template;
+package template.java.tmpl;
 
 import java.io.BufferedReader;
 import java.io.IOException;

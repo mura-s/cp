@@ -1,12 +1,12 @@
 .PHONY: build
 build:
 	@cd ~/src/github.com/mura-s/cp && \
-		javac java/template/Main.java
+		javac template/java/tmpl/Main.java
 
 .PHONY: run
 run:
 	@cd ~/src/github.com/mura-s/cp && \
-		java -Xss256M java/template/Main
+		java -Xss256M template/java/tmpl/Main
 
 .PHONY: test
 test:
@@ -14,7 +14,7 @@ test:
 
 .PHONY: copy
 copy:
-	cat Main.java | grep -v "package atcoder" | pbcopy
+	cat Main.java | tail -n +3 | pbcopy
 
 .PHONY: clean
 clean:
