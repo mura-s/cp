@@ -8,10 +8,6 @@ OBJS=$(SRCS:.cpp=.o)
 $(TARGET): $(OBJS)
 	$(CPP) $(CPPFLAGS) -o $@ $(OBJS)
 
-.PHONY: fmt
-fmt:
-	clang-format -i *.cpp
-
 .PHONY: run
 run:
 	./main
@@ -19,6 +15,14 @@ run:
 .PHONY: test
 test:
 	./test.sh
+
+.PHONY: copy
+copy:
+	cat $(TARGET).cpp | pbcopy
+
+.PHONY: fmt
+fmt:
+	clang-format -i *.cpp
 
 .PHONY: clean
 clean:
