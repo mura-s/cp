@@ -1,5 +1,9 @@
 .vscode/ipch/
 
+# cpp
 main
 main.o
 main.dSYM
+
+# java
+*.class
