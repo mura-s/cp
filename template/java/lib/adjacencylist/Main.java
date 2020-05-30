@@ -1,4 +1,4 @@
-package template.java.tmpl;
+package template.java.lib.adjacencylist;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -13,20 +13,57 @@ public class Main {
     // static long L_INF = (1L << 62) - 1;
     // static long MOD = (long) 1e9 + 7;
 
+    // 辺に属性がある場合
+    // static class Edge {
+    // int to;
+    // int cost;
+
+    // Edge(int to, int cost) {
+    // this.to = to;
+    // this.cost = cost;
+    // }
+    // }
+
     static class Solver {
+        // グラフの隣接リストでの表現。 (蟻本参照)
+        // 辺があるかの判定: 最悪|V|
+        // メモリ: |V| + |E|
+        ArrayList<ArrayList<Integer>> g;
         int N;
-        // int[] A;
 
         // write your code
+        // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_11_A&lang=jp
         void solve(InputReader in, PrintWriter out) {
             N = in.nextInt();
-            // A = new int[N];
-            // for (int i = 0; i < N; i++) {
-            // A[i] = in.nextInt();
-            // }
+            g = new ArrayList<>();
+            for (int i = 0; i < N; i++) {
+                ArrayList<Integer> al = new ArrayList<>();
+                int u = in.nextInt() - 1;
+                int k = in.nextInt();
+                for (int j = 0; j < k; j++) {
+                    int vi = in.nextInt() - 1;
+                    al.add(vi);
+                }
+                g.add(al);
+            }
 
-            int ans = 0;
-            out.println(ans);
+            int[][] ans = new int[N][N];
+            for (int i = 0; i < N; i++) {
+                int size = g.get(i).size();
+                for (int j = 0; j < size; j++) {
+                    ans[i][g.get(i).get(j)] = 1;
+                }
+            }
+
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    if (j != 0) {
+                        out.print(" ");
+                    }
+                    out.print(ans[i][j]);
+                }
+                out.println();
+            }
         }
 
         void debug(Object... os) {
