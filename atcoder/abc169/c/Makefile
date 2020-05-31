@@ -10,6 +10,10 @@ run:
 test:
 	./test.sh
 
+.PHONY: copy
+copy:
+	cat Main.java | tail -n +3 | pbcopy
+
 .PHONY: clean
 clean:
 	rm -rf *.class

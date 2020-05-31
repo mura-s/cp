@@ -12,19 +12,39 @@ public class Main {
     // static long MOD = (long) 1e9 + 7;
 
     static class Solver {
+        // グラフの隣接行列での表現。 (蟻本参照)
+        // 辺があるかの判定: 定数時間
+        // メモリ: |V|^2
+        //
+        // 無向グラフの場合、 g[i][j] == g[j][i] となるように設定する。
+        // 有向グラフの場合、 i->jに向かう辺があるなら、g[i][j] == 1 となる。
+
+        int MAX_V = 101;
+
         int N;
-        // int[] A;
+        int[][] G = new int[MAX_V][MAX_V];
 
         // write your code
         void solve(InputReader in, PrintWriter out) {
             N = in.nextInt();
-            // A = new int[N];
-            // for (int i = 0; i < N; i++) {
-            // A[i] = in.nextInt();
-            // }
+            for (int i = 0; i < N; i++) {
+                int u = in.nextInt() - 1;
+                int k = in.nextInt();
+                for (int j = 0; j < k; j++) {
+                    int vi = in.nextInt() - 1;
+                    G[i][vi] = 1;
+                }
+            }
 
-            int ans = 0;
-            out.println(ans);
+            for (int i = 0; i < N; i++) {
+                for (int j = 0; j < N; j++) {
+                    if (j != 0) {
+                        out.print(" ");
+                    }
+                    out.print(G[i][j]);
+                }
+                out.println();
+            }
         }
 
         void debug(Object... os) {

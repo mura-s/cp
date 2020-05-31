@@ -1,5 +1,3 @@
-package template.java.lib.adjacencymatrix;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
@@ -14,39 +12,45 @@ public class Main {
     // static long MOD = (long) 1e9 + 7;
 
     static class Solver {
-        // グラフの隣接行列での表現。 (蟻本参照)
-        // 辺があるかの判定: 定数時間
-        // メモリ: |V|^2
-        //
-        // 無向グラフの場合、 g[i][j] == g[j][i] となるように設定する。
-        // 有向グラフの場合、 i->jに向かう辺があるなら、g[i][j] == 1 となる。
+        int n;
+        int[] S;
+        int q;
 
-        int MAX_V = 101;
-
-        int N;
-        int[][] G = new int[MAX_V][MAX_V];
+        boolean binarySearch(int[] arr, int v) {
+            int left = 0;
+            int right = arr.length;
+            while (left < right) {
+                int mid = (left + right) / 2;
+                if (arr[mid] == v) {
+                    return true;
+                } else if (arr[mid] < v) {
+                    left = mid + 1;
+                } else {
+                    right = mid;
+                }
+            }
+            return false;
+        }
 
         // write your code
+        // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja
         void solve(InputReader in, PrintWriter out) {
-            N = in.nextInt();
-            for (int i = 0; i < N; i++) {
-                int u = in.nextInt() - 1;
-                int k = in.nextInt();
-                for (int j = 0; j < k; j++) {
-                    int vi = in.nextInt() - 1;
-                    G[i][vi] = 1;
+            n = in.nextInt();
+            S = new int[n];
+            for (int i = 0; i < n; i++) {
+                S[i] = in.nextInt();
+            }
+
+            q = in.nextInt();
+            int ans = 0;
+            for (int i = 0; i < q; i++) {
+                int ti = in.nextInt();
+                if (binarySearch(S, ti)) {
+                    ans++;
                 }
             }
 
-            for (int i = 0; i < N; i++) {
-                for (int j = 0; j < N; j++) {
-                    if (j != 0) {
-                        out.print(" ");
-                    }
-                    out.print(G[i][j]);
-                }
-                out.println();
-            }
+            out.println(ans);
         }
 
         void debug(Object... os) {

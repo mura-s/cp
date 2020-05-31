@@ -16,6 +16,10 @@ run:
 test:
 	./test.sh
 
+.PHONY: copy
+copy:
+	cat $(TARGET).cpp | pbcopy
+
 .PHONY: fmt
 fmt:
 	clang-format -i *.cpp

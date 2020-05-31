@@ -1,11 +1,10 @@
-package template.java.lib.binarysearch;
-
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.io.PrintWriter;
+import java.math.BigDecimal;
 import java.util.*;
 
 public class Main {
@@ -14,44 +13,20 @@ public class Main {
     // static long MOD = (long) 1e9 + 7;
 
     static class Solver {
-        int n;
-        int[] S;
-        int q;
-
-        boolean binarySearch(int[] arr, int v) {
-            int left = 0;
-            int right = arr.length;
-            while (left < right) {
-                int mid = (left + right) / 2;
-                if (arr[mid] == v) {
-                    return true;
-                } else if (arr[mid] < v) {
-                    left = mid + 1;
-                } else {
-                    right = mid;
-                }
-            }
-            return false;
-        }
+        BigDecimal A;
+        BigDecimal B;
+        // int[] A;
 
         // write your code
-        // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=ALDS1_4_B&lang=ja
         void solve(InputReader in, PrintWriter out) {
-            n = in.nextInt();
-            S = new int[n];
-            for (int i = 0; i < n; i++) {
-                S[i] = in.nextInt();
-            }
-
-            q = in.nextInt();
-            int ans = 0;
-            for (int i = 0; i < q; i++) {
-                int ti = in.nextInt();
-                if (binarySearch(S, ti)) {
-                    ans++;
-                }
-            }
-
+            A = new BigDecimal(in.next());
+            B = new BigDecimal(in.next());
+            // A = new int[N];
+            // for (int i = 0; i < N; i++) {
+            // A[i] = in.nextInt();
+            // }
+            long ans = A.multiply(B).longValue();
+            // ans.setScale(0,BigDecimal.ROUND_DOWN)
             out.println(ans);
         }
 
