@@ -16,21 +16,21 @@ typedef long long ll;
 // const ll LL_INF = (1LL << 62) - 1;
 // const ll MOD = 1e9 + 7;
 
-const ll X = 3;
-const ll VEC_LEN = 5;
+ll item = 3;
 vector<ll> vec = {1, 3, 3, 4, 5};
 
-bool check(ll v) {
+bool check(ll idx, ll v) {
   // TODO: implement check
-  return vec[v] > X;
+  return vec[idx] > v;
 }
 
-ll binary_search(ll k) {
+// 自前のlower_bound的な実装
+ll binary_search(ll len, ll v) {
   ll left = 0;
-  ll right = k; // always satisfied with the check.
+  ll right = len; // always satisfied with the check.
   while (left < right) {
     ll mid = (left + right) / 2;
-    if (check(mid)) {
+    if (check(mid, v)) {
       right = mid;
     } else {
       left = mid + 1;
@@ -43,6 +43,6 @@ int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
 
-  cout << binary_search(VEC_LEN) << endl;
+  cout << binary_search(vec.size(), item) << endl;
   return 0;
 }
