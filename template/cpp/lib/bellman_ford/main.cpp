@@ -14,8 +14,8 @@ using namespace std;
 typedef long long ll;
 const int INF = 2000000000;
 
-const int MAX_V = 2001;
-const int MAX_E = 1001;
+const int MAX_V = 1001;
+const int MAX_E = 2001;
 
 struct edge {
   int from, to, cost;
