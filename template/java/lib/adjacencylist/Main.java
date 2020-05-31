@@ -38,7 +38,7 @@ public class Main {
             g = new ArrayList<>();
             for (int i = 0; i < N; i++) {
                 ArrayList<Integer> al = new ArrayList<>();
-                int u = in.nextInt() - 1;
+                in.nextInt();
                 int k = in.nextInt();
                 for (int j = 0; j < k; j++) {
                     int vi = in.nextInt() - 1;
