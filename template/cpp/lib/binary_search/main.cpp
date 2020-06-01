@@ -20,7 +20,7 @@ ll item = 3;
 vector<ll> vec = {1, 3, 3, 4, 5};
 
 bool check(ll idx, ll v) {
-  // TODO: implement check
+  // implement check if needed
   return vec[idx] > v;
 }
 
