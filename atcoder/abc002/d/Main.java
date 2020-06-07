@@ -13,18 +13,50 @@ public class Main {
     // static long MOD = (long) 1e9 + 7;
 
     static class Solver {
-        int N;
-        // int[] A;
+        int N, M;
+        HashSet<Point> hs;
 
         // write your code
         void solve(InputReader in, PrintWriter out) {
             N = in.nextInt();
-            // A = new int[N];
-            // for (int i = 0; i < N; i++) {
-            // A[i] = in.nextInt();
-            // }
+            M = in.nextInt();
+            hs = new HashSet<>();
+            for (int i = 0; i < M; i++) {
+                int x = in.nextInt() - 1;
+                int y = in.nextInt() - 1;
+                hs.add(new Point(x, y));
+            }
+
+            if (M == 0) {
+                out.println(1);
+                return;
+            }
 
             int ans = 0;
+            for (int i = 1; i < (1 << N); i++) {
+                ArrayList<Integer> al = new ArrayList<>();
+                int bit = i;
+                int n = 0;
+                while (bit > 0) {
+                    if (bit % 2 == 1) {
+                        al.add(n);
+                    }
+                    bit /= 2;
+                    n++;
+                }
+
+                boolean flag = true;
+                for (int j = 0; j < al.size(); j++) {
+                    for (int k = j + 1; k < al.size(); k++) {
+                        if (!hs.contains(new Point(al.get(j), al.get(k)))) {
+                            flag = false;
+                        }
+                    }
+                }
+                if (flag) {
+                    ans = Math.max(ans, al.size());
+                }
+            }
             out.println(ans);
         }
 
