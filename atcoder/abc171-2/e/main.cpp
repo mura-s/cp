@@ -25,16 +25,24 @@ using LLP = pair<ll, ll>;
 // const double PI = M_PI;
 
 int N;
-// vector<int> A;
+vector<int> a;
 
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
   cin >> N;
-  // A.resize(N);
-  // rep(i, N) { cin >> A[i]; }
+  a.resize(N);
+  rep(i, N) { cin >> a[i]; }
 
-  int ans = 0;
-  cout << ans << endl;
+  int sum = 0;
+  rep(i, N) { sum ^= a[i]; }
+
+  rep(i, N) {
+    if (i != 0) {
+      cout << " ";
+    }
+    cout << (sum ^ a[i]);
+  }
+  cout << endl;
   return 0;
 }
