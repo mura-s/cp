@@ -26,6 +26,7 @@
     "tuple": "cpp",
     "__config": "cpp",
     "deque": "cpp",
-    "string": "cpp"
+    "string": "cpp",
+    "bit": "cpp"
   }
 }
