@@ -4,8 +4,6 @@ DIR :=
 # e.g. cpp or java
 LANG :=
 
-package = $(subst /,.,$(DIR))
-
 # tasks
 .PHONY: contest
 contest: .check-dir
