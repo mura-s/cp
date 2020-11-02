@@ -7,7 +7,10 @@ import sys
 n = int(input())
 # a = list(map(int, input().split()))
 
-if n % 2 == 0:
-    print('White')
-else:
-    print('Black')
+ans = 0
+for _ in range(n):
+    a, b = map(int, input().split())
+    m = b - a + 1
+    ans += (a + b) * m // 2
+
+print(ans)

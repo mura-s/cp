@@ -5,7 +5,7 @@ try() {
     input="$1"
     expected="$2"
 
-    actual="$(echo $input | python main.py)"
+    actual=`echo "$input" | python main.py`
 
     if [ "$actual" != "$expected" ]; then
         echo "WA"
@@ -26,10 +26,14 @@ try() {
 # test cases
 echo "[Sample1]"
 input1="$(cat << EOS
+2
+1 3
+3 5
 
 EOS
 )"
 expected1="$(cat << EOS
+18
 
 EOS
 )"
@@ -37,10 +41,15 @@ try "$input1" "$expected1"
 
 echo "[Sample2]"
 input2="$(cat << EOS
+3
+11 13
+17 47
+359 44683
 
 EOS
 )"
 expected2="$(cat << EOS
+998244353
 
 EOS
 )"
@@ -48,10 +57,13 @@ try "$input2" "$expected2"
 
 echo "[Sample3]"
 input3="$(cat << EOS
+1
+1 1000000
 
 EOS
 )"
 expected3="$(cat << EOS
+500000500000
 
 EOS
 )"

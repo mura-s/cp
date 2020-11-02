@@ -5,7 +5,7 @@ try() {
     input="$1"
     expected="$2"
 
-    actual="$(echo $input | make run)"
+    actual=`echo "$input" | make run`
 
     if [ "$actual" != "$expected" ]; then
         echo "WA"

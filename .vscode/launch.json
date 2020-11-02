@@ -19,6 +19,13 @@
       "type": "java",
       "request": "launch",
       "mainClass": "${file}"
+    },
+    {
+      "name": "debug-py",
+      "type": "python",
+      "request": "launch",
+      "program": "${file}",
+      "console": "integratedTerminal"
     }
   ]
 }

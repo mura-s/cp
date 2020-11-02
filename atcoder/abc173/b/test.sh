@@ -5,7 +5,7 @@ try() {
     input="$1"
     expected="$2"
 
-    actual="$(echo $input | ./main)"
+    actual=`echo "$input" | ./main`
 
     if [ "$actual" != "$expected" ]; then
         echo "WA"
