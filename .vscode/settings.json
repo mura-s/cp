@@ -28,5 +28,6 @@
     "deque": "cpp",
     "string": "cpp",
     "bit": "cpp"
-  }
+  },
+  "python.pythonPath": "/Users/muramatsu/.pyenv/shims/python"
 }
