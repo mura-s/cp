@@ -1,10 +1,10 @@
-from bisect import bisect_left, bisect
-import collections
+from bisect import bisect_left, bisect_right
+from collections import Counter, defaultdict, deque
 from copy import deepcopy
 from heapq import heappop, heappush
-from itertools import accumulate, combinations, permutations
-import math
+from itertools import accumulate, combinations, permutations, product
 from operator import itemgetter
+import math
 import sys
 
 # INF = (1 << 30) - 1
