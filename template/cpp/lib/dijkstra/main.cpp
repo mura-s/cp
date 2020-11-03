@@ -24,6 +24,7 @@ typedef pair<int, int> P; // firstは最短距離, secondは頂点の番号
 int V, E;
 vector<edge> G[MAX_V];
 int d[MAX_V];
+int prev_path[MAX_V]; // prev_path[i]の流入元の点
 
 // 負辺のない単一始点全点間最短路を求めるアルゴリズム。
 // 蟻本参照
@@ -32,6 +33,7 @@ int d[MAX_V];
 void dijkstra(int s) {
   priority_queue<P, vector<P>, greater<P>> que;
   fill(d, d + V, INF);
+  fill(prev_path, prev_path + V, -1);
   d[s] = 0;
   que.push(P(0, s));
 
@@ -48,12 +50,22 @@ void dijkstra(int s) {
       if (d[e.to] > d[v] + e.cost) {
         d[e.to] = d[v] + e.cost;
         que.push(P(d[e.to], e.to));
+        prev_path[e.to] = v;
       }
     }
   }
 }
 
-// http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_A&lang=jp
+// 経路復元
+vector<int> get_path(int e) {
+  vector<int> path;
+  for (; e != -1; e = prev_path[e]) {
+    path.push_back(e);
+  }
+  reverse(path.begin(), path.end());
+  return path;
+}
+
 int main() {
   ios::sync_with_stdio(false);
   cin.tie(0);
@@ -66,12 +78,22 @@ int main() {
   }
 
   dijkstra(r);
-  for (int i = 0; i < V; i++) {
-    if (d[i] == INF) {
-      cout << "INF" << endl;
-    } else {
-      cout << d[i] << endl;
+  // for (int i = 0; i < V; i++) {
+  //   if (d[i] == INF) {
+  //     cout << "INF" << endl;
+  //   } else {
+  //     cout << d[i] << endl;
+  //   }
+  // }
+  cout << d[6] << endl;
+
+  vector<int> path = get_path(6);
+  for (int i = 0; i < path.size(); i++) {
+    if (i != 0) {
+      cout << " ";
     }
+    cout << path[i];
   }
+  cout << endl;
   return 0;
 }
