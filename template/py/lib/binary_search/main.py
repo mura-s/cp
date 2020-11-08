@@ -15,7 +15,7 @@ class BinarySearch:
     def search(self, v: int):
         left = 0
         right = len(self._lis)  # always satisfied with the check.
-        while (left < right):
+        while left < right:
             mid = (left + right) // 2
             if (self._lis[mid] == v):
                 return True
