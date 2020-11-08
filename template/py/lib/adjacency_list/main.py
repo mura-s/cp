@@ -17,10 +17,11 @@ g[1].append(2)
 for i in range(MAX_V):
     print(g[i])
 
-# 辺に属性がある場合
-
 
 class Edge:
+    ''' 辺に属性がある場合
+    '''
+
     def __init__(self, to: int, cost: int):
         self._to = to
         self._cost = cost
