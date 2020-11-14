@@ -49,6 +49,7 @@ public class Main {
 
         // 負辺のない単一始点全点間最短路を求めるアルゴリズム。
         // 蟻本参照
+        // 計算量: O(ElogV)
         void dijkstra(int s) {
             PriorityQueue<Vertex> que = new PriorityQueue<>();
             Arrays.fill(d, INF);
