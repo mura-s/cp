@@ -24,10 +24,12 @@ public class Main {
         void solve(InputReader in, PrintWriter out) {
             long a = 2000000020;
             long b = 20;
-            long ans = mod((a % MOD) - (b % MOD));
+            long ans1 = mod((a % MOD) - (b % MOD));
+            long ans2 = mod((b % MOD) - (a % MOD));
             out.println(a % MOD);
             out.println(b % MOD);
-            out.println(ans);
+            out.println(ans1);
+            out.println(ans2);
         }
 
         void debug(Object... os) {
