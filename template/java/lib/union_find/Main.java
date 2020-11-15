@@ -59,6 +59,7 @@ public class Main {
     static class Solver {
         int n, q;
 
+        // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=DSL_1_A&lang=jp
         // write your code
         void solve(InputReader in, PrintWriter out) {
             n = in.nextInt();
