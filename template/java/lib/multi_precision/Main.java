@@ -23,7 +23,7 @@ public class Main {
 
             // https://javazuki.com/articles/bigdecimal-usage.html
             BigDecimal c = new BigDecimal("0.00001");
-            BigDecimal d = new BigDecimal("0.00001");
+            BigDecimal d = new BigDecimal("0.00002");
             out.println(c.multiply(d).toPlainString());
         }
 
