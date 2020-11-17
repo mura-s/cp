@@ -95,6 +95,7 @@ public class Main {
             return res;
         }
 
+        // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_2_A&lang=jp
         // write your code
         void solve(InputReader in, PrintWriter out) {
             V = in.nextInt();
