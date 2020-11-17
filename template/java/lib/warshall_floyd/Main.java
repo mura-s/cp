@@ -35,6 +35,7 @@ public class Main {
             }
         }
 
+        // http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_1_C&lang=jp
         // write your code
         void solve(InputReader in, PrintWriter out) {
             V = in.nextInt();
