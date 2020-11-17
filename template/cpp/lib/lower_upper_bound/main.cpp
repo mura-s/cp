@@ -21,7 +21,7 @@ vector<ll> vec = {1, 3, 3, 4, 5};
 
 bool check(ll idx, ll v) {
   // implement check if needed
-  return vec[idx] > v;
+  return vec[idx] >= v;
 }
 
 // 自前のlower_bound的な実装
