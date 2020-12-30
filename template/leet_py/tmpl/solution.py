@@ -7,6 +7,7 @@ from copy import deepcopy
 from decimal import Decimal
 from heapq import heappop, heappush
 from operator import itemgetter
+from typing import List
 
 sys.setrecursionlimit(10**6)
 # INF = (1 << 30) - 1
