@@ -11,8 +11,5 @@
     "./leetcode/problems/2",
     "-p",
     "test_*.py"
-  ],
-  "python.testing.pytestEnabled": false,
-  "python.testing.nosetestsEnabled": false,
-  "python.testing.unittestEnabled": true
+  ]
 ```
