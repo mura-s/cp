@@ -16,6 +16,7 @@ INF = (1 << 30) - 1
 
 
 class Solution:
+    # O(N+M) の解法
     def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
         ans = 0.0
         sum_len = len(nums1) + len(nums2)
