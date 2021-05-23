@@ -7,6 +7,6 @@
 
 ```json
   "python.testing.pytestArgs": [
-    "template/leet_py/tmpl",
+    "leetcode/problems/1"
   ]
 ```
