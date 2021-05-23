@@ -6,11 +6,7 @@
   - 結果はサイドバーのテストのビューに表示される
 
 ```json
-  "python.testing.unittestArgs": [
-    "-v",
-    "-s",
-    "./leetcode/problems/2",
-    "-p",
-    "test_*.py"
+  "python.testing.pytestArgs": [
+    "template/leet_py/tmpl",
   ]
 ```

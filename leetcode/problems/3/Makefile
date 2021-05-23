@@ -1,6 +1,6 @@
 .PHONY: test
 test:
-	python -m unittest
+	python -m pytest
 
 .PHONY: fmt
 fmt:
