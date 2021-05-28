@@ -1,2 +1,3 @@
 # cp
-Competitive Programming (CP) solutions and libraries
+
+Competitive Programming (CP) solutions and libraries.

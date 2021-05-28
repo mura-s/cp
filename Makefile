@@ -1,7 +1,7 @@
 # parameters
 # e.g. atcoder/abc001 or atcoder/abc001/a
 DIR :=
-# e.g. cpp or java or leet_py or py
+# e.g. cpp or java or py
 LANG :=
 
 # tasks
