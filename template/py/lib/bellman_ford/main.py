@@ -28,7 +28,7 @@ d = [INF for _ in range(MAX_V)]
 
 def bellman_ford(s: int, v: int, e: int):
     d[s] = 0
-    for _ in range(0, v-1):
+    for _ in range(0, v - 1):
         for j in range(0, e):
             edge = es[j]
             if d[edge.f()] == INF:
@@ -53,11 +53,11 @@ for i in range(0, e):
 
 flag = bellman_ford(r, v, e)
 if not flag:
-    print('NEGATIVE CYCLE')
+    print("NEGATIVE CYCLE")
     exit()
 
 for i in range(0, v):
     if d[i] == INF:
-        print('INF')
+        print("INF")
     else:
         print(d[i])

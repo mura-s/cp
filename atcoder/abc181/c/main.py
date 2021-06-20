@@ -14,8 +14,8 @@ for i in range(n):
 
 flag = False
 for i in range(n):
-    for j in range(i+1, n):
-        for k in range(j+1, n):
+    for j in range(i + 1, n):
+        for k in range(j + 1, n):
             dx1 = x[i] - x[j]
             dy1 = y[i] - y[j]
             dx2 = x[j] - x[k]
@@ -33,6 +33,6 @@ for i in range(n):
                 break
 
 if flag:
-    print('Yes')
+    print("Yes")
 else:
-    print('No')
+    print("No")

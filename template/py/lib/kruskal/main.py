@@ -54,12 +54,12 @@ class UfTree:
 
 
 def kruskal(es, v: int, e: int):
-    '''最小全域木 (全域木のうち、その辺群の重みの総和が最小になる木)
+    """最小全域木 (全域木のうち、その辺群の重みの総和が最小になる木)
     を求めるアルゴリズム
     計算量: O(ElogV)
 
     es: Edge list
-    '''
+    """
     sorted_es = sorted(es, key=lambda e: e.cost())
     uf = UfTree(v)
     res = 0

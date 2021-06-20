@@ -15,4 +15,4 @@ print(a * b)
 c = Decimal("0.3")
 d = Decimal("0.2")
 ans = c * d
-print('{:.2f}'.format(ans))
+print("{:.2f}".format(ans))

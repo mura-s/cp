@@ -29,5 +29,6 @@
     "string": "cpp",
     "bit": "cpp",
     "iostream": "cpp"
-  }
+  },
+  "python.pythonPath": "${workspaceRoot}/.venv/bin/python"
 }

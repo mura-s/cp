@@ -9,8 +9,7 @@ from operator import itemgetter
 
 
 def divisor(n: int):
-    '''約数列挙
-    '''
+    """約数列挙"""
     res = []
     i = 1
     while i * i <= n:

@@ -10,7 +10,7 @@ import sys
 # 有向グラフの場合、 i->jに向かう辺があるなら、g[i][j] == 1 となる。
 
 MAX_V = 3
-g = [[0]*MAX_V for _ in range(MAX_V)]
+g = [[0] * MAX_V for _ in range(MAX_V)]
 
 # 無向グラフ & 重みなし (https://qiita.com/ell/items/2a327fe021fb7dafe07a#%E5%85%A5%E5%8A%9B-to-%E9%9A%A3%E6%8E%A5%E8%A1%8C%E5%88%97)
 g[0][1] = 1

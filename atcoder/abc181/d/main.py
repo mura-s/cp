@@ -10,9 +10,9 @@ s = input()
 if len(s) <= 2:
     rev = int(s[::-1])
     if int(s) % 8 == 0 or rev % 8 == 0:
-        print('Yes')
+        print("Yes")
     else:
-        print('No')
+        print("No")
     exit()
 
 # len(s) > 2
@@ -27,7 +27,7 @@ for n in range(104, 1000, 8):
             flag = False
             break
     if flag:
-        print('Yes')
+        print("Yes")
         exit()
 
-print('No')
+print("No")

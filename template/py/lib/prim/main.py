@@ -25,11 +25,11 @@ class Edge:
 
 
 def prim(v: int):
-    '''最小全域木 (全域木のうち、その辺群の重みの総和が最小になる木)
+    """最小全域木 (全域木のうち、その辺群の重みの総和が最小になる木)
     を求めるアルゴリズム
     https://ei1333.github.io/luzhiled/snippets/graph/prim.html
     計算量: O(ElogV)
-    '''
+    """
     ans = 0
     used = [False for _ in range(v)]
     que = []

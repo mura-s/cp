@@ -7,7 +7,7 @@ from copy import deepcopy
 from heapq import heappop, heappush
 from operator import itemgetter
 
-MOD = 10**9 + 7
+MOD = 10 ** 9 + 7
 
 m, n = map(int, input().split())
 ans = pow(m, n, MOD)

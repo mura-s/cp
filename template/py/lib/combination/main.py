@@ -9,9 +9,9 @@ from operator import itemgetter
 
 
 def nCr(n: int, r: int):
-    '''ref. https://www.kaoken.cg0.xyz/math_combination/
+    """ref. https://www.kaoken.cg0.xyz/math_combination/
     組み合わせ (combination) を求める
-    '''
+    """
     if r > n:
         return 0
     if r == 0 or n == r:
@@ -19,17 +19,17 @@ def nCr(n: int, r: int):
     if r * 2 > n:
         r = n - r
     result = n
-    for i in range(2, r+1):
-        result *= (n - i + 1)
+    for i in range(2, r + 1):
+        result *= n - i + 1
         result //= i
     return result
 
 
 def nHr(n: int, r: int):
-    '''重複組み合わせを求める
+    """重複組み合わせを求める
     r個のものをn種類にわける
     ref. https://mathtrain.jp/tyohukuc
-    '''
+    """
     return nCr(n + r - 1, r)
 
 

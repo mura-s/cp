@@ -17,9 +17,9 @@ class BinarySearch:
         right = len(self._lis)  # always satisfied with the check.
         while left < right:
             mid = (left + right) // 2
-            if (self._lis[mid] == v):
+            if self._lis[mid] == v:
                 return True
-            elif (self._lis[mid] < v):
+            elif self._lis[mid] < v:
                 left = mid + 1
             else:
                 right = mid

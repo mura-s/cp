@@ -8,6 +8,6 @@ n = int(input())
 # a = list(map(int, input().split()))
 
 if n % 2 == 0:
-    print('White')
+    print("White")
 else:
-    print('Black')
+    print("Black")

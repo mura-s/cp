@@ -19,8 +19,7 @@ for i in range(MAX_V):
 
 
 class Edge:
-    ''' 辺に属性がある場合
-    '''
+    """辺に属性がある場合"""
 
     def __init__(self, to: int, cost: int):
         self._to = to
@@ -40,4 +39,4 @@ g[0].append(Edge(2, 2))
 g[1].append(Edge(2, 3))
 for i in range(MAX_V):
     for v in g[i]:
-        print('{}: {} {}'.format(i, v.to(), v.cost()))
+        print("{}: {} {}".format(i, v.to(), v.cost()))

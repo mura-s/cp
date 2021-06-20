@@ -38,9 +38,9 @@ def dfs(idx: int, parent: int):
 
 
 def tree_diameter():
-    '''重み付き木の直径を求める. (重みが与えられていない場合は, 全ての重みを1とする.)
+    """重み付き木の直径を求める. (重みが与えられていない場合は, 全ての重みを1とする.)
     頂点数をNとして、計算量は O(N).
-    '''
+    """
     p = dfs(0, -1)
     q = dfs(p[1], -1)
     return q[0]
@@ -51,7 +51,7 @@ sys.setrecursionlimit(200000)
 
 # http://judge.u-aizu.ac.jp/onlinejudge/description.jsp?id=GRL_5_A&lang=jp
 n = int(input())
-for i in range(n-1):
+for i in range(n - 1):
     s, t, w = map(int, input().split())
     g[s].append(Edge(t, w))
     g[t].append(Edge(s, w))

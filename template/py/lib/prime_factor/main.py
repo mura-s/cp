@@ -10,9 +10,9 @@ from operator import itemgetter
 
 
 def prime_factor(n: int):
-    '''素因数分解
+    """素因数分解
     素数の値と個数のpairのvectorを返す
-    '''
+    """
     l = []
     p = 2
     while p * p <= n:
@@ -32,4 +32,4 @@ def prime_factor(n: int):
 m = 48
 primes = prime_factor(m)
 for p in primes:
-    print('{} {}'.format(p[0], p[1]))
+    print("{} {}".format(p[0], p[1]))

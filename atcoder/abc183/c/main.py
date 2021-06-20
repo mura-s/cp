@@ -8,7 +8,7 @@ from decimal import Decimal
 from heapq import heappop, heappush
 from operator import itemgetter
 
-sys.setrecursionlimit(10**6)
+sys.setrecursionlimit(10 ** 6)
 
 n, k = map(int, input().split())
 t = [[] for _ in range(n)]

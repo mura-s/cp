@@ -12,7 +12,7 @@ INF = (1 << 31) - 1
 
 
 class SegmentTree:
-    '''セグメント木による RMQ (Range Minimum Query) の実装
+    """セグメント木による RMQ (Range Minimum Query) の実装
     RMQ以外にする場合は、fnに別の関数を渡す
 
     計算量
@@ -21,11 +21,10 @@ class SegmentTree:
       - init後にupdateで初期化
     - update: O(logn)
     - query: O(logn)
-    '''
+    """
 
     def __init__(self, n, fn=lambda x, y: min(x, y)):
-        '''簡単のため、要素数を2のべき乗に
-        '''
+        """簡単のため、要素数を2のべき乗に"""
         self.n = 1
         while self.n < n:
             self.n *= 2
@@ -33,8 +32,7 @@ class SegmentTree:
         self.fn = fn
 
     def update(self, i, x):
-        '''i番目の値 (0-indexed) をxに変更
-        '''
+        """i番目の値 (0-indexed) をxに変更"""
         k = self.n + i - 1
         self.arr[k] = x
         while k > 0:
@@ -42,17 +40,16 @@ class SegmentTree:
             self.arr[k] = self.fn(self.arr[2 * k + 1], self.arr[2 * k + 2])
 
     def query(self, l, r):
-        '''[l, r) の最小値を求める
-        '''
+        """[l, r) の最小値を求める"""
         return self._inner_query(l, r, 0, 0, self.n)
 
     def _inner_query(self, l, r, k, il, ir):
-        '''private method
+        """private method
         [l, r) の最小値を求める
         後ろのほうの引数は、計算の簡単のための引数。
         kは節点の番号、il, irはその節点が [il, ir) に対応づいていることを表す。
         したがって、外からは _inner_query(l, r, 0, 0, n) として呼ぶ。
-        '''
+        """
         if ir <= l or r <= il:
             return INF
 
@@ -72,4 +69,4 @@ for i in range(q):
     if com == 0:
         st.update(x, y)
     else:
-        print(st.query(x, y+1))
+        print(st.query(x, y + 1))

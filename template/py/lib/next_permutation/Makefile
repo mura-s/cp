@@ -8,4 +8,4 @@ test:
 
 .PHONY: fmt
 fmt:
-	autopep8 -i main.py
+	poetry run black main.py

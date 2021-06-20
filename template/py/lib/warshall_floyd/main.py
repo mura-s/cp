@@ -17,12 +17,12 @@ for i in range(MAX_V):
 
 
 def warshall_floyd(v: int):
-    '''隣接行列で表されるグラフの全点間最短路を求めるアルゴリズム。
+    """隣接行列で表されるグラフの全点間最短路を求めるアルゴリズム。
     負辺があっても動作する。負閉路が存在する場合はそれも検出する。
     https://ei1333.github.io/luzhiled/snippets/graph/warshall-floyd.html
 
     計算量: O(V^3)
-    '''
+    """
     for k in range(v):
         for i in range(v):
             for j in range(v):
@@ -47,15 +47,15 @@ for i in range(e):
 warshall_floyd(v)
 for i in range(v):
     if d[i][i] < 0:
-        print('NEGATIVE CYCLE')
+        print("NEGATIVE CYCLE")
         exit()
 
 for i in range(v):
     for j in range(v):
         if j != 0:
-            print(' ', end='')
+            print(" ", end="")
         if d[i][j] == INF:
-            print('INF', end='')
+            print("INF", end="")
         else:
-            print(d[i][j], end='')
-    print('')
+            print(d[i][j], end="")
+    print("")

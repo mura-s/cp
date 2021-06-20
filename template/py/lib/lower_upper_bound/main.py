@@ -17,8 +17,7 @@ def check(idx: int, v: int):
 
 
 def binary_search(size: int, v: int):
-    '''自前のlower_bound的な実装
-    '''
+    """自前のlower_bound的な実装"""
     left = 0
     right = size
     # always satisfied with the check.

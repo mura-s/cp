@@ -8,7 +8,7 @@ from heapq import heappop, heappush
 from operator import countOf, itemgetter
 
 INF = (1 << 30) - 1
-MAX_V = 10**6 + 1
+MAX_V = 10 ** 6 + 1
 graph = [[] for _ in range(MAX_V)]
 dist = [INF for _ in range(MAX_V)]
 prev_path = [-1 for _ in range(MAX_V)]
@@ -27,10 +27,10 @@ class Edge:
 
 
 def dijkstra(s: int):
-    '''負辺のない単一始点全点間最短路を求めるアルゴリズム。
+    """負辺のない単一始点全点間最短路を求めるアルゴリズム。
     蟻本参照
     計算量: O(ElogV)
-    '''
+    """
     pq = []
     heappush(pq, (0, s))  # (cost, pos)
     dist[s] = 0
@@ -47,8 +47,7 @@ def dijkstra(s: int):
 
 
 def get_path(e: int):
-    '''経路復元
-    '''
+    """経路復元"""
     path = []
     while e != -1:
         path.append(e)
